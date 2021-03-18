@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+    class App extends Component {
+    constructor() {
+    super();
+    this.state = {
+    count: 0,
+    }
+  }
+ makeIncrementer = amount => () =>
+ this.setState(prevState => ({
+ count: prevState.count + amount,
+ }));
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p style ={{color: 'green', fontStyle: 'oblique', fontSize: 35}}>
-          Looking forward to learning React!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         
-        </a>
-      </header>
-    </div>
-  );
-}
+ increment = this.makeIncrementer(1);
+ render() {
+ return (
+ <div>
+ <p>Count: {this.state.count}</p>
+ <button className="increment" onClick={this.increment}>Increment
+count</button>
+ </div>
+ )
+ }
+ }
+ 
+ export default App;
 
-export default App;
+
