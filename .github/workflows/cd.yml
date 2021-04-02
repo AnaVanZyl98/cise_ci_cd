@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - feature
 
 jobs:
   build:
@@ -15,7 +15,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - feature
 
 jobs:
   build:
